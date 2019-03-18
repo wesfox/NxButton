@@ -197,7 +197,7 @@ function checkForStart(){
     polop.onended = () => {
         started = false;
         let text = score > 5000 ? "Bravo" : "Déso"
-        points.innerHTML = text + ", tu as fait " + score + " points.<br>N'oublie pas de venir en amphi Michelin pour le direct 3A le 20 mars à 22h !"
+        points.innerHTML = text + ", tu as fait " + score + " points.<br>N'oublie pas de venir en amphi Michelin pour le direct 3A le 20 mars à 20h30 !"
     }
     waitForAudioLoad()
   }
