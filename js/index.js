@@ -192,7 +192,7 @@ function checkForStart(){
     tuto = document.getElementById("tuto")
     tuto.innerHTML = 'Rendez vous au <a style="color:black;text-decoration:none;font-weight:bold;" href="https://linkcs.fr/event/62">Direct 3A en amphi Michelin à 20h30<a/> !'
     start_time = Date.now()/1000
-    polop = new Audio('http://shared.nicolasfley.fr/total_polop.mp3');
+    polop = new Audio('https://hyris.tv/zik/total_polop.mp3');
     polop.onended = () => {
         started = false;
         let text = score > 5000 ? "Bravo" : "Déso"
