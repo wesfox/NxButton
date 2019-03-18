@@ -9,6 +9,11 @@ body, html {
   margin: auto;
 }
 
+a{
+  color:black;
+  font-weight:bold;
+}
+
 .button::before, .button::after {
   position: absolute;
   content: '';
