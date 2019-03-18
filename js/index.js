@@ -174,6 +174,17 @@ document.body.onkeydown = function(e){
     }
 }
 
+let waitForAudioLoad = () => {
+  console.log(polop.readyState)
+  if(polop.readyState === 4){
+    setTimeout(function(){ polop.play(); }, start_offset*1000);
+    requestAnimationFrame(mainLoop);
+    started = true
+  }else{
+    setTimeout(waitForAudioLoad, 50);
+  }
+}
+
 let is_starting = false
 function checkForStart(){
   if(!is_starting){
@@ -187,15 +198,7 @@ function checkForStart(){
         let text = score > 5000 ? "Bravo" : "Déso"
         points.innerHTML = text + ", tu as fait " + score + " points.<br>N'oublie pas de venir en amphi Michelin pour le direct 3A le 20 mars à 22h !"
     }
-    waitForAudioLoad = () => {
-      if(polop.readyState == 4){
-        setTimeout(function(){ polop.play(); }, start_offset*1000);
-        requestAnimationFrame(mainLoop);
-        started = true
-      }else{
-        setTimeout(waitForAudioLoad, 50);
-      }
-    }
+    waitForAudioLoad()
   }
 }
 
