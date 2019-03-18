@@ -177,6 +177,7 @@ document.body.onkeydown = function(e){
 let waitForAudioLoad = () => {
   console.log(polop.readyState)
   if(polop.readyState === 4){
+    init();
     setTimeout(function(){ polop.play(); }, start_offset*1000);
     requestAnimationFrame(mainLoop);
     started = true
