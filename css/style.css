@@ -5,6 +5,8 @@ body, html {
   background: #e53935;
   background: #fff;
   font-family: Roboto;
+  width: 400px;
+  margin: auto;
 }
 
 .button::before, .button::after {
