@@ -191,7 +191,7 @@ function checkForStart(){
   if(!is_starting){
     is_starting = true
     tuto = document.getElementById("tuto")
-    tuto.innerHTML = 'Rendez vous au <a style="color:black;text-decoration:none;font-weight:bold;" href="https://linkcs.fr/event/62">Direct 3A en amphi Michelin à 20h30<a/> !'
+    tuto.innerHTML = 'Rendez vous au <a style="color:black;font-weight:bold;" href="https://linkcs.fr/event/62">Direct 3A en amphi Michelin à 20h30<a/> !'
     start_time = Date.now()/1000
     polop = new Audio('https://hyris.tv/zik/total_polop.mp3');
     polop.onended = () => {
