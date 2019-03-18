@@ -5,7 +5,7 @@ body, html {
   height: 100%;
   width: 100%;
   background: #e53935;
-  background: linear-gradient(to left, #aaa, #888);
+  background: linear-gradient(to left, #fff, #888);
   font-family: Roboto;
 }
 

@@ -162,11 +162,13 @@ function checkIfKeyDownOkay(){
 let started = false;
 document.body.onkeyup = function(e){
     if(e.keyCode == 78 || e.keyCode == 88){
+        checkForStart()
         checkIfKeyUpOkay()
     }
 }
 document.body.onkeydown = function(e){
     if(e.keyCode == 78 || e.keyCode == 88){
+        checkForStart()
         checkIfKeyDownOkay()
     }
 }
