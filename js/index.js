@@ -174,8 +174,10 @@ document.body.onkeydown = function(e){
     }
 }
 
+let is_starting = false
 function checkForStart(){
-  if(!started){
+  if(!is_starting){
+    is_starting = true
     tuto = document.getElementById("tuto")
     tuto.innerHTML = 'Rendez vous au <a style="color:black;text-decoration:none;font-weight:bold;" href="https://linkcs.fr/event/62">Direct 3A en amphi Michelin à 20h30<a/> !'
     start_time = Date.now()/1000
@@ -189,13 +191,12 @@ function checkForStart(){
       if(polop.readyState == 4){
         setTimeout(function(){ polop.play(); }, start_offset*1000);
         requestAnimationFrame(mainLoop);
+        started = true
       }else{
         setTimeout(waitForAudioLoad, 50);
       }
     }
-    
   }
-  started = true
 }
 
 if( /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/.test(navigator.userAgent) ) {
