@@ -1,0 +1,109 @@
+@import "https://fonts.googleapis.com/css?family=Roboto";
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #e53935;
+  background: linear-gradient(to left, #aaa, #888);
+  font-family: Roboto;
+}
+
+.button::before, .button::after {
+  position: absolute;
+  content: '';
+  transition: all .1s;
+}
+
+.mobileButton {
+  display: inline-block;
+  padding: 80px 200px;
+  color: white;
+  position: relative;
+  top: -5px;
+  left: -5px;
+  vertical-align: middle;
+  font-family: 'Rubik One', sans-serif;
+  text-decoration: none;
+  font-size: 4vw;
+  background-color: #191919;
+  background-image: url("http://shared.nicolasfley.fr/logo_nx.png");
+  background-size: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 3px 2px 0px 2px;
+}
+
+.mobileButton:hover {
+  background-color: #222;
+}
+
+.button:hover {
+  background-color: #222;
+}
+
+.button {
+  transition: all .1s;
+  display: inline-block;
+  padding: 80px 200px;
+  margin-bottom: 10px;
+  color: white;
+  position: relative;
+  top: -5px;
+  left: -5px;
+  vertical-align: middle;
+  font-family: 'Rubik One', sans-serif;
+  text-decoration: none;
+  font-size: 4vw;
+  background-color: #191919;
+  background-image: url("http://shared.nicolasfley.fr/logo_nx.png");
+  background-size: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 3px 2px 0px 2px;
+}
+.button::before {
+  bottom: -15px;
+  height: 15px;
+  width: 100%;
+  left: 8px;
+  -webkit-transform: skewX(45deg);
+          transform: skewX(45deg);
+  background-color: black;
+}
+.button::after {
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  bottom: -8px;
+  -webkit-transform: skewY(45deg);
+          transform: skewY(45deg);
+  background-color: black;
+}
+.button:active, .button .active {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.button:active::before, .button .active::before {
+  bottom: -5px;
+  height: 5px;
+  left: 3px;
+}
+.button:active::after, .button .active::after {
+  right: -5px;
+  width: 5px;
+  bottom: -3px;
+}
+
+.restart:hover {
+  background-color: 'white';
+  color: 'black';
+}
+
+.restart {
+  background-color: 'black';
+  color: 'white';
+  cursor: pointer;
+  padding: 5px;
+}
