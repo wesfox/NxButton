@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
 
-<!-- La qualité de ce code a été inspiré des préceptes du bouddhisme Zen -->
+<!-- La qualité de ce code a été inspirée des préceptes du bouddhisme Zen -->
 
 <head>
   <meta charset="UTF-8">
@@ -18,18 +18,21 @@
 
 <body>
 
-   <body>
-<div style="text-align: center">
-  <p id="tuto" style="font-size:1.3em;">Press N, X or click on the NX button</p>
-<a class="button" 
-   id="nxButton" onclick="checkForStart()"></a>
+<body>
+  <div style="text-align: center">
+    <p id="tuto" style="font-size:1.3em;">Press N, X or click on the NX button</p>
+  <a class="button" 
+    id="nxButton" onclick="checkForStart()"></a>
+    <br>
   <br>
-<br>
-<canvas id="canvas" width="400" height="20" style="background-color:black"></canvas>
-  <p><span id="points">Score : 0</span></p>
-  <button class="restart" onclick="location.reload()">Restart</button>
-  <p><a href="https://linkcs.fr/event/62" style="font-weight: 300">Retourner sur LinkCS</a></p>
-</div>
+  <canvas id="canvas" width="400" height="20" style="background-color:black"></canvas>
+    <p><span id="points">Score : 0</span></p>
+    <button class="restart" onclick="init()">Restart</button>
+    <p><a href="https://linkcs.fr/event/62" style="font-weight: 300">Retourner sur LinkCS</a></p>
+  </div>
+  <div class="soundButtonWrapper">
+    <img id="muteStateWrapper" src="https://hyris.tv/img/sound_logo.png" class="soundButton"/> <span style="position:relative;bottom:15px;font-size: 0.8em;" id="muteState">mute me</span>
+  </div>
 </body>
   
   

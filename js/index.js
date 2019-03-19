@@ -7,6 +7,8 @@ const canvas = document.getElementById('canvas');
 const points = document.getElementById('points');
 const ctx = canvas.getContext('2d');
 const nxButton = document.getElementById("nxButton")
+const muteState = document.getElementById("muteState")
+const muteStateWrapper = document.getElementById("muteStateWrapper")
 
 let start_time = Date.now()/1000
 let a = [[0.1,1]]
@@ -40,6 +42,10 @@ function init(){
   polop.pause()
   polop.currentTime = 0
   setTimeout(function(){ polop.play(); }, start_offset*1000);
+  if(started === false){
+    started = true;
+    requestAnimationFrame(mainLoop);
+  }
 }
 
 let window_begin = 0
@@ -58,8 +64,9 @@ function fail(){
 }
 function success(k){
 	if(k)
-  	a.splice(k,1)
-	polop.muted = false
+    a.splice(k,1)
+  if(!play_muted)
+	  polop.muted = false
   bonus = 100 + Math.floor(Math.random() * Math.floor(20));
   score += bonus
   points.innerHTML = "Score : " + score + " (+" + bonus + ")" 
@@ -178,6 +185,7 @@ let waitForAudioLoad = () => {
   console.log(polop.readyState)
   if(polop.readyState === 4){
     init();
+    polop.muted= true;
     setTimeout(function(){ polop.play(); }, start_offset*1000);
     requestAnimationFrame(mainLoop);
     started = true
@@ -213,3 +221,15 @@ if( /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/.test(
   nxButton.addEventListener("mousedown", checkIfKeyDownOkay);
   nxButton.addEventListener("mouseup", checkIfKeyUpOkay);
 }
+
+play_muted = false;
+muteStateWrapper.addEventListener("click", function(){
+  if(play_muted == true){
+    play_muted = false
+    muteState.innerHTML = "mute me"
+  }else{
+    play_muted = true;
+    polop.muted = true
+    muteState.innerHTML = "unmute me";
+  }
+})

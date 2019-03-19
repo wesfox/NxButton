@@ -7,11 +7,25 @@ body, html {
   font-family: Roboto;
   width: 400px;
   margin: auto;
+  position: relative;
 }
 
 a{
   color:black;
   font-weight:bold;
+}
+
+.soundButtonWrapper{
+  position: absolute;
+  bottom: -10px;
+  right: -20px;
+}
+.soundButton{
+  border-radius: 100px;
+  border: 1px solid #ddd;
+  background-color: #ddd;
+  padding: 3px;
+  height: 30px;
 }
 
 .button::before, .button::after {
